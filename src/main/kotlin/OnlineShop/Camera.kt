@@ -1,0 +1,4 @@
+package OnlineShop
+
+class Camera {
+}

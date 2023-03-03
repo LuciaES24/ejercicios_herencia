@@ -69,7 +69,7 @@ class Almacen{
         for ((key, value) in mapaAlmacen){
             for (bebida in value){
                 if (id == bebida.identificador){
-                    mapaAlmacen.remove(key)
+                    value.remove(bebida)
                 }
             }
         }

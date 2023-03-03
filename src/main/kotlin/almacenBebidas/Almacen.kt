@@ -1,6 +1,6 @@
 package almacenBebidas
 
-class Almacen(estant:Int) {
+class Almacen{
     var estanteria = 0
         set(value) {
             if (value > 100){
@@ -14,10 +14,6 @@ class Almacen(estant:Int) {
         }
     var mapaAlmacen = HashMap<Int,MutableList<Bebida>>()
 
-    init {
-        estanteria = estant
-    }
-
     fun agregarProducto(estant: Int, lista:MutableList<Bebida>){
         mapaAlmacen[estant]= lista
     }
@@ -27,6 +23,7 @@ class Almacen(estant:Int) {
         for ((key, value) in mapaAlmacen){
             for (bebida in value){
                 println("Escriba la cantidad que quiere de ${bebida.toString()}")
+                println("-->")
                 var cantidad = readln().toInt()
                 precioTotal += bebida.calcular(cantidad)
             }
@@ -42,6 +39,7 @@ class Almacen(estant:Int) {
                 for (bebida in value) {
                     if(bebida.marca == marcaElegida) {
                         println("Escriba la cantidad que quiere de ${bebida.toString()}")
+                        println("-->")
                         var cantidad = readln().toInt()
                         precioTotal += bebida.calcular(cantidad)
                     }
@@ -58,6 +56,7 @@ class Almacen(estant:Int) {
             if(key == estanteriaElegida){
                 for (bebida in value){
                     println("Escriba la cantidad que quiere de ${bebida.toString()}")
+                    println("-->")
                     var cantidad = readln().toInt()
                     precioTotal += bebida.calcular(cantidad)
                 }
@@ -66,8 +65,15 @@ class Almacen(estant:Int) {
         println("El precio total del almacén según la marca es $precioTotal")
     }
 
-    fun eliminarProducto(){
-
+    fun eliminarProducto(id:Int){
+        for ((key, value) in mapaAlmacen){
+            for (bebida in value){
+                if (id == bebida.identificador){
+                    mapaAlmacen.remove(key)
+                }
+            }
+        }
+        println("Producto eliminado con éxito")
     }
 
     fun mostrarInfo(){

@@ -29,9 +29,9 @@ abstract class Bebida(l:Double, pr:Double, marc:String) {
     }
 
 
-    open fun calcular(cantidad :Int){
+    open fun calcular(cantidad :Int):Double{
         var precioFinal = precio*cantidad
-        println("El precio final es $precioFinal")
+        return precioFinal
     }
 
     override fun toString(): String {

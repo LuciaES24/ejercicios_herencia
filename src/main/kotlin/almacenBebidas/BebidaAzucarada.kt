@@ -9,14 +9,14 @@ class BebidaAzucarada(l:Double, pr:Double, marc:String, azucar:Double, prom:Bool
         promocion = prom
     }
 
-    override fun calcular(cantidad: Int) {
+    override fun calcular(cantidad: Int) : Double{
         var precioFinal = 0.0
         if (promocion == true){
             precioFinal = precio*cantidad - (precio*0.1)
         }else{
             precioFinal = precio*cantidad
         }
-        println("El precio final es $precioFinal")
+        return precioFinal
     }
 
     override fun toString(): String {

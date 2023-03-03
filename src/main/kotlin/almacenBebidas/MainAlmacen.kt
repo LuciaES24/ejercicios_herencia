@@ -1,19 +1,31 @@
 package almacenBebidas
 
 fun main(){
-    var bebida1 = BebidaAzucarada(2.0,2.1,"Coca Cola", 60.5,true)
-    var bebida2 = AguaMineral(5.4, 1.1,"Fontnatura","Granada")
-    var bebida3 = BebidaAzucarada(1.5, 1.9,"Fanta",46.7,false)
-    var bebida4 = BebidaAzucarada(3.2,2.3,"Sprite",34.2,false)
-    var bebida5 = AguaMineral(2.5,0.9,"Solan","Jaen")
 
-    bebida1.calcular(5)
+    val lista1 = mutableListOf<Bebida>()
+    val lista2 = mutableListOf<Bebida>()
+    val bebida1 = BebidaAzucarada(2.0,2.1,"Coca Cola", 60.5,true)
+    lista1.add(bebida1)
+    val bebida2 = AguaMineral(5.4, 1.1,"Fontnatura","Granada")
+    lista2.add(bebida2)
+    val bebida3 = BebidaAzucarada(1.5, 1.9,"Fanta",46.7,false)
+    lista1.add(bebida3)
+    val bebida4 = BebidaAzucarada(3.2,2.3,"Sprite",34.2,false)
+    lista1.add(bebida4)
+    val bebida5 = AguaMineral(2.5,0.9,"Solan","Jaen")
+    lista2.add(bebida5)
+
+    val almacen = Almacen()
+    almacen.agregarProducto(2,lista1)
+    almacen.agregarProducto(4,lista2)
+    almacen.mostrarInfo()
     println()
-    bebida2.calcular(3)
+    //almacen.eliminarProducto(0)
+    //almacen.mostrarInfo()
+    almacen.calcularPrecioTotal()
     println()
-    bebida3.calcular(2)
+    almacen.calcularPrecioMarca()
     println()
-    bebida4.calcular(4)
-    println()
-    bebida5.calcular(8)
+    almacen.calcularPrecioEstanteria()
+
 }

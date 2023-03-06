@@ -8,7 +8,7 @@ class AguaMineral(l:Double, pr:Double, marc:String, manantial:String) : Bebida(l
     }
 
     override fun toString(): String {
-        return "${super.toString()}||AguaMineral(manantialOrigen='$manantialOrigen')"
+        return "${super.toString()}|| Manantial de Origen=$manantialOrigen"
     }
 
 

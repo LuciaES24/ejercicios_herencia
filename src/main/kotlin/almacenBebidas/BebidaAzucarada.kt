@@ -20,7 +20,7 @@ class BebidaAzucarada(l:Double, pr:Double, marc:String, azucar:Double, prom:Bool
     }
 
     override fun toString(): String {
-        return "${super.toString()}||BebidaAzucarada(porcentajeAzucar=$porcentajeAzucar, promocion=$promocion)"
+        return "${super.toString()} || Porcentaje de azucar=$porcentajeAzucar || Promocion=$promocion"
     }
 
 

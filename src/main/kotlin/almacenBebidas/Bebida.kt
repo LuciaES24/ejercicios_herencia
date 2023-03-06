@@ -35,7 +35,7 @@ abstract class Bebida(l:Double, pr:Double, marc:String) {
     }
 
     override fun toString(): String {
-        return "Bebida(identificador=$identificador, litro=$litro, precio=$precio, marca='$marca')"
+        return "Marca=$marca || Identificador=$identificador || Litros=$litro || Precio=$precio"
     }
 
 }

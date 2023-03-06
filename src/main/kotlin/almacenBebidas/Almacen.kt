@@ -23,7 +23,7 @@ class Almacen{
         for ((key, value) in mapaAlmacen){
             for (bebida in value){
                 println("Escriba la cantidad que quiere de ${bebida.toString()}")
-                println("-->")
+                print("-->")
                 var cantidad = readln().toInt()
                 precioTotal += bebida.calcular(cantidad)
             }
@@ -45,7 +45,7 @@ class Almacen{
                     }
                 }
             }
-        println("El precio total del almacén según la estantería es $precioTotal")
+        println("El precio total del almacén según la marca es $precioTotal")
     }
 
     fun calcularPrecioEstanteria(){
@@ -62,7 +62,7 @@ class Almacen{
                 }
             }
         }
-        println("El precio total del almacén según la marca es $precioTotal")
+        println("El precio total del almacén según la estantería es $precioTotal")
     }
 
     fun eliminarProducto(id:Int){
@@ -70,6 +70,7 @@ class Almacen{
             for (bebida in value){
                 if (id == bebida.identificador){
                     value.remove(bebida)
+                    break
                 }
             }
         }

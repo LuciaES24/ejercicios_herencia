@@ -1,5 +1,8 @@
 package almacenBebidas
 
+import java.util.random.RandomGenerator
+import kotlin.random.Random
+
 class Almacen{
     var estanteria = 0
         set(value) {
@@ -77,6 +80,37 @@ class Almacen{
         println("Producto eliminado con éxito")
     }
 
+    fun eliminarMarca(marcaElegida:String){
+        val listaBebidasRepetidas = mutableListOf<Int>()
+        for ((key, value) in mapaAlmacen){
+            for (bebida in value){
+                if (bebida.marca == marcaElegida){
+                    listaBebidasRepetidas.add(bebida.identificador)
+                }
+            }
+        }
+        for (iden in listaBebidasRepetidas){
+            eliminarProducto(iden)
+        }
+    }
+
+    fun eliminarMarcaMejorada(marcaElegida: String){
+        for((key, value) in mapaAlmacen){
+            value.removeIf{it.marca == marcaElegida}
+        }
+    }
+
+    fun borrarEstanteria(estanteriaElegida : Int){
+        val listaBebidasEliminadas = mapaAlmacen[estanteriaElegida]
+        mapaAlmacen.remove(estanteriaElegida)
+        if (listaBebidasEliminadas != null) {
+            for (bebida in listaBebidasEliminadas){
+
+
+            }
+        }
+
+    }
     fun mostrarInfo(){
         for ((key, value) in mapaAlmacen){
             for(bebida in value){

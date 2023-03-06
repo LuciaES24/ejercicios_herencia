@@ -10,7 +10,7 @@ fun main(){
     lista2.add(bebida2)
     val bebida3 = BebidaAzucarada(1.5, 1.9,"Fanta",46.7,false)
     lista1.add(bebida3)
-    val bebida4 = BebidaAzucarada(3.2,2.3,"Sprite",34.2,false)
+    val bebida4 = BebidaAzucarada(3.2,2.3,"Fanta",34.2,false)
     lista1.add(bebida4)
     val bebida5 = AguaMineral(2.5,0.9,"Solan","Jaen")
     lista2.add(bebida5)
@@ -20,6 +20,7 @@ fun main(){
     almacen.agregarProducto(4,lista2)
     almacen.mostrarInfo()
     println()
+    /*
     almacen.eliminarProducto(0)
     almacen.mostrarInfo()
     almacen.calcularPrecioTotal()
@@ -27,5 +28,9 @@ fun main(){
     almacen.calcularPrecioMarca()
     println()
     almacen.calcularPrecioEstanteria()
+
+     */
+    almacen.eliminarMarca()
+    almacen.mostrarInfo()
 
 }

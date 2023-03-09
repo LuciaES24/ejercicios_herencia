@@ -30,7 +30,6 @@ fun main(){
     almacen.calcularPrecioEstanteria()
 
      */
-    almacen.eliminarMarca()
     almacen.mostrarInfo()
 
 }

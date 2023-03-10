@@ -7,6 +7,7 @@ class Compra {
         for((key,value) in listaCompra){
             if(product.nombre == key.nombre){
                 listaCompra.replace(key,value+1)
+                break
             }else{
                 print("Escriba la cantidad que quiere de ${product.nombre}:")
                 val cantidadElegida = readln().toInt()

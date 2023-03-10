@@ -1,9 +1,7 @@
 package CompraProductos
 
-import alquiler_vehiculos.Bus
-
 fun main(){
-    var compraFinal = Compra()
+    val compraFinal = Compra()
 
     fun gestionarCompra(){
         var actual = true
@@ -48,11 +46,13 @@ fun main(){
                     compraFinal.eliminarProducto(producto_elegido)
                 }
                 3 ->{
+                    println("TICKET DE COMPRA")
                     compraFinal.imprimirTicket()
                     print("TOTAL -> ")
                     print(compraFinal.calcularPrecio())
                 }
                 4 ->{
+                    println("COMPRA")
                     compraFinal.imprimirCompra()
                 }
                 5 ->{

@@ -4,8 +4,7 @@ class NoPerecedero(name:String, price:Double, type:String):Producto(name, price)
     var tipo = ""
         set(value) {
             if(value == ""){
-                println("Debe introducir un tipo válido")
-                field = readln()
+                field="Otros"
             }else if(value in tipos_productos){
                 field = value
             }else{

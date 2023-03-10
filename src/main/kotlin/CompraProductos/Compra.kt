@@ -4,9 +4,15 @@ class Compra {
     var listaCompra = HashMap<Producto, Int>()
 
     fun comprar(product:Producto){
-        print("Escriba la cantidad que quiere de ${product.nombre}:")
-        val cantidadElegida = readln().toInt()
-        listaCompra[product]=cantidadElegida
+        for((key,value) in listaCompra){
+            if(product.nombre == key.nombre){
+                listaCompra.replace(key,value+1)
+            }else{
+                print("Escriba la cantidad que quiere de ${product.nombre}:")
+                val cantidadElegida = readln().toInt()
+                listaCompra[product]=cantidadElegida
+            }
+        }
     }
 
     fun eliminarProducto(nombre:String){
@@ -29,13 +35,12 @@ class Compra {
     }
 
     fun imprimirCompra(){
-        for (producto in listaCompra){
-            println(producto.toString())
+        for ((key, value) in listaCompra){
+            println(key.toString())
         }
     }
 
     fun imprimirTicket(){
-        println("TICKET DE COMPRA")
         for((key, value)in listaCompra){
             println("$value ${key.nombre} -> ${key.Calcular(value)}")
         }
@@ -49,6 +54,7 @@ class Compra {
                 val cantidadFinal  = value-cantidadQuitar
                 listaCompra[key]=cantidadFinal
                 println("Se ha actualizado la compra")
+                break
             }else{
                 println("Dicho producto no existe")
             }
@@ -63,6 +69,7 @@ class Compra {
                 val cantidadFinal  = value+cantidadAnadir
                 listaCompra[key]=cantidadFinal
                 println("Se ha actualizado la compra")
+                break
             }else{
                 println("Dicho producto no existe")
             }

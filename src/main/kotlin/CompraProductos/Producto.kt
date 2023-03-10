@@ -17,7 +17,7 @@ open class Producto(name:String, price:Double) {
         set(value) {
             if(precio<0.0){
                 println("Debe introducir un precio válido")
-                field = readln().toDouble()
+                precio = readln().toDouble()
             }else{
                 field = value
             }

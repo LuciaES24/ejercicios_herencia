@@ -5,7 +5,7 @@ class Perecedero(name:String, price:Double, dias:Int):Producto(name, price) {
         set(value) {
             if (value < 1) {
                 println("El producto ya está caducado, introduzca una fecha válida")
-                field = readln().toInt()
+                diasParaCaducar = readln().toInt()
             }else{
                 field = value
             }
